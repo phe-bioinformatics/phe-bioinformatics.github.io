@@ -31,7 +31,7 @@ date: 2017-06-14
   ```
   ![Labelled Tree]({{ site.url }}/assets/title_and_labels.png)
   - If you prefer right aligned labels this can be done, and we'll also add a scale bar.
-  **N.B** Addition of `ggplot2::xlim(0, 0.3)` is necessary to stop truncated labels when aligned right, the second argument needs to be determined by trial and error
+  **N.B** Addition of `ggplot2::xlim(0, 0.3)` is necessary to stop truncated labels when aligned right, the second argument needs to be determined by trial and error. See [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
   ```R
   p <- ggtree(tree, right = TRUE) + ggtitle("Test Tree") + geom_tiplab(size = 2, align=TRUE, linesize=.25)  + geom_treescale(x=0.05, y=0, offset=2, fontsize = 3) + ggplot2::xlim(0, 0.3)
  plot(p)
