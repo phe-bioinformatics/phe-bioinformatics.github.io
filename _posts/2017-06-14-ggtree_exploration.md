@@ -31,7 +31,7 @@ date: 2017-06-14
   ```
   ![Labelled Tree]({{ site.url }}/assets/title_and_labels.png)
   - If you prefer right aligned labels this can be done, and we'll also add a scale bar.
-  **N.B** Addition of `ggplot2::xlim(0, 0.3)` is necessary to stop truncated labels when aligned right, the second argument needs to be determined by trial and error. See [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
+  **N.B** Addition of `ggplot2::xlim(0, 0.3)` is necessary to stop truncated labels when aligned right, the second parameter needs to be determined by trial and error. See [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
   ```R
   p <- ggtree(tree, right = TRUE) + ggtitle("Test Tree") + geom_tiplab(size = 2, align=TRUE, linesize=.25)  + geom_treescale(x=0.05, y=0, offset=2, fontsize = 3) + ggplot2::xlim(0, 0.3)
  plot(p)
@@ -40,7 +40,7 @@ date: 2017-06-14
  - Adding a bootstrap value is a bit more fun, requiring some data manipulation.
    - Get all data from the tree and find only non leaf nodes.
    - Convert the lables to numeric values and only keep those where the value is >65
-   - Add it to the tree as `geom_text`. The `hjust` and `vjust` arguments can be eited to control position (again by trial and error)
+   - Add it to the tree as `geom_text`. The `hjust` and `vjust` parameters can be eited to control position (again by trial and error)
    - **N.B** This is also foind in the [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
  
  ```R
@@ -54,5 +54,19 @@ date: 2017-06-14
  plot(p)
  ```
  ![Bootstrapped Tree]({{ site.url }}/assets/add_bootstraps.png)
+ - OK the tree is looking kinda OK. Now we can get round to adding the heatmap
+ Data is provided in the format as a tsv and read in 
+ 
+ |sample      |phenotype           |MIC|
+ |------------|--------------------|---|
+ |sample_60546|resistant           |10 |
+ |sample_40537|high level resistant|256|
+ |sample_00125|sensitive           |0  |
+ |sample_01454|intermediate        |0.5|
+ ```R
+ meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
+ ```
+ header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric
+ 
   
   
