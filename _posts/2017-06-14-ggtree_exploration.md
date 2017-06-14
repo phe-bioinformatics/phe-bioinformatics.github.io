@@ -5,7 +5,7 @@ date: 2017-06-14
 ---
 ### Experiments with ggtree
 
-Being predominantly a python user when it comes to bioinformatics analyses I was keen to try and find a python library to draw trees with associated 'heatmaps' that display categorical meta data alongside the tip labels of the tree. I really tried to like the ete3 library that some had recommended but found the interface to the functions too obtuse. Other colleagues suggested the ggtree package in R. Although it has a similar API to ggplot2, which in itself takes some getting used to, the documentation is good and with a little effort taken to read the extnsive docs has a fairly intuitive interface.
+Being predominantly a python user when it comes to bioinformatics analyses I was keen to try and find a python library to draw trees with associated 'heatmaps' that display categorical meta data alongside the tip labels of the tree. I really tried to like the ete3 library that some had recommended but found the interface to the functions too obtuse. Other colleagues suggested the ggtree package in R. Although it has a similar API to ggplot2, which in itself takes some getting used to, the documentation is good and with a little effort taken to read the extensive docs has a fairly intuitive interface.
 
 This post will explore my explorations in how phylogenies and associated heatmaps can be drawn using the [ggtree package](https://guangchuangyu.github.io/ggtree/) in R. I would strongly recommend using [RStudio](https://www.rstudio.com/) since it makes working within R a breeze, particularly with graphical outputs.
 
