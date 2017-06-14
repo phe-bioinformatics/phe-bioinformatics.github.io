@@ -58,7 +58,8 @@ This post will explore my explorations in how phylogenies and associated heatmap
  plot(p)
  ```
  ![Bootstrapped Tree]({{ site.url }}/assets/add_bootstraps.png)
- - Now the tree is looking kinda OK, we can get round to adding the heatmap
+ - Now the tree is looking kinda OK, we can get round to adding the heatmap.
+ 
    Data is provided in the format as a tsv and read using the following code. Header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric.
  ```R
  meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
