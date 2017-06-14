@@ -4,6 +4,7 @@ title: "Growing a ggtree"
 date: 2017-06-14
 ---
 ### Experiments with ggtree
+This post will explore how phylogenies and associated heatmaps can be drwn using the [ggtree package](https://guangchuangyu.github.io/ggtree/) in R
 
   - Reading in a tree
   ```R
