@@ -4,4 +4,4 @@ name: PHE Bioinformatics
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
