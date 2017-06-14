@@ -59,12 +59,12 @@ This post will explore how phylogenies and associated heatmaps can be drawn usin
  - OK the tree is looking kinda OK. Now we can get round to adding the heatmap
  Data is provided in the format as a tsv and read in 
  
- | sample | phenotype | MIC |
- |--------|-----------|-----|
- | sample_60546 | resistant | 10 |
- | sample_40537 | high level resistant | 256 |
- | sample_00125 | sensitive | 0 |
- | sample_01454 | intermediate | 0.5 |
+   | sample | phenotype | MIC |
+   |--------|-----------|-----|
+   | sample_60546 | resistant | 10 |
+   | sample_40537 | high level resistant | 256 |
+   | sample_00125 | sensitive | 0 |
+   | sample_01454 | intermediate | 0.5 |
  
  And the code to read this in is as follows.  Header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric.
  ```R
