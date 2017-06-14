@@ -69,8 +69,12 @@ This post will explore how phylogenies and associated heatmaps can be drawn usin
    | sample_00125 | sensitive | 0 |
    | sample_01454 | intermediate | 0.5 |
  
- 
-
+  - We can plot a heatmap of the data contained in this file with the following code
+   ```R
+   hm <- gheatmap(p,meta_data, offset = 0.02, width=0.15, font.size=3, colnames_position= "top", colnames_angle = 90, colnames_offset_y = 0, hjust = 0) + scale_fill_manual(values=c("sensitive" = "green", "intermediate" = "turquoise", "resistant" = "blue", "high level resistant" = "purple3", "0" = "white", "0.25" = "white", "0.5" = "gold", "10" = "darkorange2", "15" = "darkorange2", "20" = "darkorange2", "256" = "firebrick3"))
+ plot(hm)
+ ```
+ ![Heatmap Tree]({{ site.url }}/assets/heatmap.png)
  
   
   
