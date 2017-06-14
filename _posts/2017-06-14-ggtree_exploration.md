@@ -37,5 +37,21 @@ date: 2017-06-14
  plot(p)
  ```
  ![Right aligned labels and Scale Tree]({{ site.url }}/assets/aligned_labels_and_scale_bar.png)
+ - Adding a bootstrap value is a bit more fun, requiring some data manipulation.
+   - Get all data from the tree and find only non leaf nodes.
+   - Convert the lables to numeric values and only keep those where the value is >65
+   - Add it to the tree as `geom_text`. The `hjust` and `vjust` arguments can be eited to control position (again by trial and error)
+ **N.B** This is also foind in the [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
+ ```R
+ p <- ggtree(tree, right = TRUE) + ggtitle("Test Tree") + geom_tiplab(size = 2, align=TRUE, linesize=.25)  + geom_treescale(x=0.05, y=0, offset=2, fontsize = 3) + ggplot2::xlim(0, 0.3)
+ 
+ d <- p$data
+ d <- d[!d$isTip,]
+ d$label <- as.numeric(d$label)
+ d <- d[d$label > 65,]
+ p <- p + geom_text(data=d, aes(label=label), size=3, hjust = 1.25, vjust = -0.4)
+ plot(p)
+ ```
+ ![Bootstrapped Tree]({{ site.url }}/assets/add_bootstraps.png)
   
   
