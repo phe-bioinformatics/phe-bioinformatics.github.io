@@ -57,12 +57,12 @@ date: 2017-06-14
  - OK the tree is looking kinda OK. Now we can get round to adding the heatmap
  Data is provided in the format as a tsv and read in 
  
- |sample      |phenotype           |MIC|
- |------------|--------------------|---|
- |sample_60546|resistant           |10 |
- |sample_40537|high level resistant|256|
- |sample_00125|sensitive           |0  |
- |sample_01454|intermediate        |0.5|
+ | sample | phenotype | MIC |
+ |--------|-----------|-----|
+ | sample_60546 | resistant | 10 |
+ | sample_40537 | high level resistant | 256 |
+ | sample_00125 | sensitive | 0 |
+ | sample_01454 | intermediate | 0.5 |
  ```R
  meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
  ```
