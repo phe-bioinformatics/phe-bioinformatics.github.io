@@ -56,8 +56,11 @@ This post will explore how phylogenies and associated heatmaps can be drawn usin
  plot(p)
  ```
  ![Bootstrapped Tree]({{ site.url }}/assets/add_bootstraps.png)
- - OK the tree is looking kinda OK. Now we can get round to adding the heatmap
- Data is provided in the format as a tsv and read in 
+ - Now the tree is looking kinda OK, we can get round to adding the heatmap
+   Data is provided in the format as a tsv and read using the following code. Header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric.
+ ```R
+ meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
+ ```
  
    | sample | phenotype | MIC |
    |--------|-----------|-----|
@@ -66,10 +69,7 @@ This post will explore how phylogenies and associated heatmaps can be drawn usin
    | sample_00125 | sensitive | 0 |
    | sample_01454 | intermediate | 0.5 |
  
- And the code to read this in is as follows.  Header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric.
- ```R
- meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
- ```
+ 
 
  
   
