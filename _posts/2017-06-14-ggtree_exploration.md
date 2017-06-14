@@ -3,7 +3,7 @@ layout: post
 title: "Growing a ggtree"
 date: 2017-06-14
 ---
-# Experiments with ggtree
+### Experiments with ggtree
 
   - Reading in a tree
   ```R
@@ -24,4 +24,11 @@ date: 2017-06-14
   plot(p)
   ```
   ![Ladderized right tree]({{ site.url }}/assets/ladderized_right_tree.png)
+  - Let's add some tip lables and a title
+  ```R
+  p <- ggtree(tree, right = TRUE) + ggtitle("Test Tree") + geom_tiplab(size = 2)
+  plot(p)
+  ```
+  ![Labelled Tree]({{ site.url }}/assets/title_and_labels.png)
+  
   
