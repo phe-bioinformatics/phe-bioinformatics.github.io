@@ -64,9 +64,11 @@ date: 2017-06-14
  | sample_00125 | sensitive | 0 |
  | sample_01454 | intermediate | 0.5 |
  
+ And the code to read this in is
  ```R
  meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
  ```
+ 
  header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric
  
   
