@@ -41,7 +41,8 @@ date: 2017-06-14
    - Get all data from the tree and find only non leaf nodes.
    - Convert the lables to numeric values and only keep those where the value is >65
    - Add it to the tree as `geom_text`. The `hjust` and `vjust` arguments can be eited to control position (again by trial and error)
- **N.B** This is also foind in the [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
+   - **N.B** This is also foind in the [FAQ](https://guangchuangyu.github.io/ggtree/faq/)
+ 
  ```R
  p <- ggtree(tree, right = TRUE) + ggtitle("Test Tree") + geom_tiplab(size = 2, align=TRUE, linesize=.25)  + geom_treescale(x=0.05, y=0, offset=2, fontsize = 3) + ggplot2::xlim(0, 0.3)
  
