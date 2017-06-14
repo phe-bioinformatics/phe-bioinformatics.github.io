@@ -63,6 +63,7 @@ date: 2017-06-14
  | sample_40537 | high level resistant | 256 |
  | sample_00125 | sensitive | 0 |
  | sample_01454 | intermediate | 0.5 |
+ 
  ```R
  meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
  ```
