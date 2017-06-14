@@ -72,20 +72,20 @@ This post will explore my explorations in how phylogenies and associated heatmap
    | sample_01454 | intermediate | 0.5 |
 
 
-  - We can plot a heatmap of the data contained in this file with the following code
+ - We can plot a heatmap of the data contained in this file with the following code
    ```R
    hm <- gheatmap(p,meta_data, offset = 0.02, width=0.15, font.size=3, colnames_position= "top", colnames_angle = 90, colnames_offset_y = 0, hjust = 0) + scale_fill_manual(values=c("sensitive" = "green", "intermediate" = "turquoise", "resistant" = "blue", "high level resistant" = "purple3", "0" = "white", "0.25" = "white", "0.5" = "gold", "10" = "darkorange2", "15" = "darkorange2", "20" = "darkorange2", "256" = "firebrick3"))
- plot(hm)
+   plot(hm)
  ```
- Breaking this down:
-   - The offset param determines the distance between the tree and the heatmap (trial and error to set the best distance)
-   - width represents the proportion of the entire plot that will be used by the heatmap
-   - font.size is the size of the column headings
-   - colnames_position is the position of the columns labels (could also be 'bottom')
-   - colnames_angle is self explanatory
-   - colnames_offset_y and hjust allow fine tuning of the column name position
-   - scale_fill_manual - this is the most critical param and the pairs in the values vector of the format <value> = <colout> determines which values in the meta data tsv file will be coloured with which colour (see [R colour chart](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf))
-   - The legend may not be broken up appropriately into value groups so I would suggest a bit of manipulation in a vecor drawing program such as [Inkscape ](https://inkscape.org) to get it publication ready
+   Breaking this down:
+     - The offset param determines the distance between the tree and the heatmap (trial and error to set the best distance)
+     - width represents the proportion of the entire plot that will be used by the heatmap
+     - font.size is the size of the column headings
+     - colnames_position is the position of the columns labels (could also be 'bottom')
+     - colnames_angle is self explanatory
+     - colnames_offset_y and hjust allow fine tuning of the column name position
+     - scale_fill_manual - this is the most critical param in which the pairs in the values vector of the format <value> = <colout> determine which values in the meta data tsv file will be coloured with which colour (see [R colour chart](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf))
+ - The legend may not be broken up appropriately into value groups so I would suggest a bit of manipulation in a vecor drawing program such as [Inkscape ](https://inkscape.org) to get it publication ready
    
  ![Heatmap Tree]({{ site.url }}/assets/heat_map.png)
  
