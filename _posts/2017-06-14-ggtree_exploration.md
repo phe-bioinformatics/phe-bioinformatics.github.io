@@ -4,7 +4,8 @@ title: "Growing a ggtree"
 date: 2017-06-14
 ---
 ### Experiments with ggtree
-This post will explore how phylogenies and associated heatmaps can be drwn using the [ggtree package](https://guangchuangyu.github.io/ggtree/) in R
+
+This post will explore how phylogenies and associated heatmaps can be drawn using the [ggtree package](https://guangchuangyu.github.io/ggtree/) in R
 
   - Reading in a tree
   ```R
@@ -65,12 +66,11 @@ This post will explore how phylogenies and associated heatmaps can be drwn using
  | sample_00125 | sensitive | 0 |
  | sample_01454 | intermediate | 0.5 |
  
- And the code to read this in is
+ And the code to read this in is as follows.  Header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric.
  ```R
  meta_data <- read.table("meta.tsv", sep="\t", header=TRUE,check.names=FALSE, stringsAsFactor=F, row.names = 1)
  ```
- 
- header and row names are specified using the two parameters `header=TRUE` and `row.names=1`. `check.names=FALSE` is necessary in case sample names begin with a numeric
+
  
   
   
