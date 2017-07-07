@@ -20,13 +20,35 @@ In addition to adding a heatmap I found that adding coloured shapes to tips was 
   ```
   The format for this is as follows:
   
-  |taxa|age_group|
-  ======================
-  |sample1|adult female|
-  |sample2|adult male|
-  |sample3|child female|
-  |sample4|child male|
+  |taxa|age_group|country_of_residence|
+  |----|---------|--------------------|
+  |sample1|adult female|Scotland|
+  |sample2|adult male|Wales|
+  |sample3|child female|England|
+  |sample4|child male|England|
   
+  - This data can then be plotted as tip labels where the colours are either determined randomly
+  ```R
+  p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group), size=3)
+  plot(p)
+  ```
+  ![Coloured Tips Randomly]({{ site.url }}/assets/tip_shape_colour_random.png)
 
-p <- p %<+% tip_metadata + geom_tippoint(aes(color=sexual_orientation), size=3) + scale_color_manual(values=c("red", "blue","green","grey"))
+  - Or if you want to enter them manually use the scale_color_manual functionality where colours are assigned to the column values based on alphabetical order
+  ```R
+  p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group), size=3) + scale_color_manual(values=c("red", "blue","green","grey"))
+  plot(p)
+  ```
+  ![Coloured Tips Manually]({{ site.url }}/assets/tip_shape_colour_manual.png)
+  - The shapes can be altered based on another columns
+  ```R
+  p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group, shape=country_of_residence), size=3) + scale_color_manual(values=c("red", "blue","green","grey"))
+  ```
+  ![Random Shapes]({{ site.url }}({{ site.url }}/assets/tip_shape_manual.png)
+  - To specify the shapes manually use the + scale_shape_manual function
+  ```R
+  p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group, shape=country_of_residence), size=3) + scale_color_manual(values=c("red", "blue","green","grey")) + scale_shape_manual(values=c(1,2,3))
+  ```
+  ![Manual Shapes]({{ site.url }}({{ site.url }}/assets/tip_shape_random.png)
+  The shape numbers can be found here http://www.cookbook-r.com/Graphs/Shapes_and_line_types
 
