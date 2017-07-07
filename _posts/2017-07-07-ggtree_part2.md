@@ -44,11 +44,11 @@ In addition to adding a heatmap I found that adding coloured shapes to tips was 
   ```R
   p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group, shape=country_of_residence), size=3) + scale_color_manual(values=c("red", "blue","green","grey"))
   ```
-  ![Random Shapes]({{ site.url }}/assets/tip_shape_manual.png)
+  ![Random Shapes]({{ site.url }}/assets/tip_shape_random.png)
   - To specify the shapes manually use the + scale_shape_manual function
   ```R
   p <- p %<+% tip_metadata + geom_tippoint(aes(color=age_group, shape=country_of_residence), size=3) + scale_color_manual(values=c("red", "blue","green","grey")) + scale_shape_manual(values=c(1,2,3))
   ```
-  ![Manual Shapes]({{ site.url }}/assets/tip_shape_random.png)
-  The shape numbers can be found here http://www.cookbook-r.com/Graphs/Shapes_and_line_types
+  ![Manual Shapes]({{ site.url }}/assets/tip_shape_manual.png)
+  The shape numbers can be found [here](http://www.cookbook-r.com/Graphs/Shapes_and_line_types)
 
