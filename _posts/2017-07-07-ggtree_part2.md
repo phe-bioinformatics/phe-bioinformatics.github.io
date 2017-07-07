@@ -5,7 +5,7 @@ date: 2017-07-07
 ---
 ### Adding tip labels
 
-In addition to adding a heatmap I found that adding coloured shapes to tips was a useful addition
+In addition to adding a heatmap I found that adding coloured shapes to tips was a useful feature
 
   - First off read and plot the tree as before
   ```R
